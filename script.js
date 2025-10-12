@@ -29,6 +29,7 @@ const templateFolders = [
   "Gihan Harindra",
   "Glassmorphism-adiprem73",
   "Jaswanth-Kumar",
+  "Joyston",
   "Kartik Tripathi",
   "Kruti Amrutiya",
   "Minaal",

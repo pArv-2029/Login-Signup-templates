@@ -55,6 +55,7 @@ const templateFolders = [
     "Modern Animated Template",
     "SaurabhMishra(edtech+ecommerce)",
   "shivaram",
+    "SohamPadalkar",
     "Split-Screen-Dark-Shikha",
     "Tech Zero",
     "Template 1",

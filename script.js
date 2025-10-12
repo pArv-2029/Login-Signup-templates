@@ -20,7 +20,7 @@ const templateFolders = [
   "Modern Animated Template",
   "Pranilash",
   "Parth",
-  "QuantumNeon-Auth",
+  "Prachi",
   "SaurabhMishra(edtech+ecommerce)",
   "Tech Zero",
   "Template 1",

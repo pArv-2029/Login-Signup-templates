@@ -65,6 +65,7 @@ const templateFolders = [
     "Template 1",
   "Template 2",
   "OnkarJondhale",
+  "OnkarJondhale",
   "Kanishka",
 ];
 
@@ -112,7 +113,7 @@ const workingTemplates = [
     "Avinash",
     "Dev-Portal-Shikha",
   "Split-Screen-Dark-Shikha",
-  "OnkarJondhale",
+  "OnkarJondhale"
   "Kanishka",
 ];
 

@@ -60,6 +60,7 @@ const templateFolders = [
     "Nitin",
     "SaurabhMishra(edtech+ecommerce)",
   "shivaram",
+    "SohamPadalkar",
     "Split-Screen-Dark-Shikha",
     "Tech Zero",
     "Template 1",

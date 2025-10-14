@@ -1,47 +1,60 @@
-// Get elements
-const loginForm = document.getElementById('loginForm');
-const signupForm = document.getElementById('signupForm');
-const showSignup = document.getElementById('showSignup');
-const showLogin = document.getElementById('showLogin');
+document.addEventListener('DOMContentLoaded', () => {
+    const templateContainer = document.getElementById('templateContainer');
+    const formToggle = document.getElementById('formToggle');
+    const formTitle = document.getElementById('formTitle');
+    const switchText = document.getElementById('switchText');
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+    const loginCta = document.getElementById('loginCta');
+    const signupCta = document.getElementById('signupCta');
+    const welcomeTitle = document.getElementById('welcomeTitle');
+    const welcomeSubtitle = document.getElementById('welcomeSubtitle');
 
-// Toggle to Signup form
-showSignup.addEventListener('click', () => {
-    loginForm.classList.remove('active');
-    signupForm.classList.add('active');
-});
+    const toggleForms = (isSignup) => {
+        if (isSignup) {
+            // Switch to SIGNUP mode
+            templateContainer.classList.add('active-signup');
+            formTitle.textContent = 'SIGNUP';
+            switchText.textContent = 'LOGIN';
+            loginForm.classList.add('hidden');
+            signupForm.classList.remove('hidden');
+            welcomeTitle.innerHTML = 'JOIN <br> OUR PLATFORM';
+            welcomeSubtitle.textContent = 'Create your new account.';
+            formToggle.checked = true;
 
-// Toggle to Login form
-showLogin.addEventListener('click', () => {
-    signupForm.classList.remove('active');
-    loginForm.classList.add('active');
-});
+        } else {
+            // Switch to LOGIN mode
+            templateContainer.classList.remove('active-signup');
+            formTitle.textContent = 'LOGIN';
+            switchText.textContent = 'SIGNUP';
+            loginForm.classList.remove('hidden');
+            signupForm.classList.add('hidden');
+            welcomeTitle.innerHTML = 'WELCOME TO <br> OUR PLATFORM';
+            welcomeSubtitle.textContent = 'Unlock your potential.';
+            formToggle.checked = false;
+        }
+    };
 
-// Simple form validation
-loginForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const email = document.getElementById('loginEmail').value;
-    const password = document.getElementById('loginPassword').value;
+    // 1. Handle the toggle switch
+    formToggle.addEventListener('change', (e) => {
+        toggleForms(e.target.checked);
+    });
 
-    if(email && password) {
-        alert(`Logged in as ${email}`);
-        loginForm.reset();
-    } else {
-        alert('Please fill all fields');
-    }
-});
+    // 2. Handle the text click next to the switch (SIGNUP/LOGIN)
+    switchText.addEventListener('click', () => {
+        formToggle.checked = !formToggle.checked; // Toggle the state
+        toggleForms(formToggle.checked);
+    });
+    
+    // 3. Handle the CTA buttons in the abstract panel
+    loginCta.addEventListener('click', () => {
+        toggleForms(false); // Force to Login
+    });
 
-signupForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = document.getElementById('signupName').value;
-    const email = document.getElementById('signupEmail').value;
-    const password = document.getElementById('signupPassword').value;
+    signupCta.addEventListener('click', () => {
+        toggleForms(true); // Force to Signup
+    });
 
-    if(name && email && password) {
-        alert(`Account created for ${name}`);
-        signupForm.reset();
-        signupForm.classList.remove('active');
-        loginForm.classList.add('active');
-    } else {
-        alert('Please fill all fields');
-    }
+    // Initialize the state (should be Login by default)
+    toggleForms(false);
 });

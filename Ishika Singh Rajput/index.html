@@ -4,32 +4,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login / Signup Template</title>
+    <title>Modern Login/Signup</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="form-container">
-            <!-- Login Form -->
-            <form id="loginForm" class="form active">
-                <h2>Login</h2>
-                <input type="email" id="loginEmail" placeholder="Email" required>
-                <input type="password" id="loginPassword" placeholder="Password" required>
-                <button type="submit">Login</button>
-                <p>Don't have an account? <span id="showSignup">Signup</span></p>
-            </form>
 
-            <!-- Signup Form -->
-            <form id="signupForm" class="form">
-                <h2>Signup</h2>
-                <input type="text" id="signupName" placeholder="Full Name" required>
-                <input type="email" id="signupEmail" placeholder="Email" required>
-                <input type="password" id="signupPassword" placeholder="Password" required>
-                <button type="submit">Signup</button>
-                <p>Already have an account? <span id="showLogin">Login</span></p>
-            </form>
+    <div class="template-container" id="templateContainer">
+
+        <div class="abstract-panel" id="abstractPanel">
+            <div class="welcome-content">
+                <h1 id="welcomeTitle">WELCOME TO <br> OUR PLATFORM</h1>
+                <p id="welcomeSubtitle">Unlock your potential.</p>
+                <div class="cta-buttons">
+                    <button class="btn login-btn" id="loginCta">LOGIN</button>
+                    <button class="btn signup-btn" id="signupCta">SIGNUP</button>
+                </div>
+            </div>
         </div>
+
+        <div class="login-panel">
+            <div class="login-card" id="loginCard">
+                <div class="switch-header">
+                    <h2 id="formTitle">LOGIN</h2>
+                    <span class="signup-text" id="switchText">SIGNUP</span>
+                    <label class="switch">
+                        <input type="checkbox" id="formToggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+
+                <form class="auth-form" id="loginForm">
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Username or Email">
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password">
+                    </div>
+
+                    <div class="options">
+                        <label class="checkbox-container">Remember Me
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <a href="#">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="submit-btn">LOGIN</button>
+                </form>
+
+                <form class="auth-form hidden" id="signupForm">
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="Email Address">
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fas fa-user-plus"></i>
+                        <input type="text" placeholder="Choose Username">
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Create Password">
+                    </div>
+
+                    <button type="submit" class="submit-btn">SIGNUP</button>
+                </form>
+            </div>
+        </div>
+
     </div>
 
     <script src="app.js"></script>

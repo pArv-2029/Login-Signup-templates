@@ -66,7 +66,8 @@ const templateFolders = [
     "Tech Zero",
     "Template 1",
   "Template 2",
-  "OnkarJondhale"
+  "OnkarJondhale",
+  "OnkarJondhale",
   "Kanishka",
 ];
 

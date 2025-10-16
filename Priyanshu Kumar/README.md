@@ -17,9 +17,9 @@ This project demonstrates a sleek UI design with smooth transitions, animations,
 
 ## 🖼️ Preview
 
-![App Screenshot](screenshots/Priyanshu1.png)
+![App Screenshot](../screenshots/Priyanshu1.png)
 
 
-![App Screenshot](screenshots/Priyanshu2.png)
+![App Screenshot](../screenshots/Priyanshu2.png)
 
 

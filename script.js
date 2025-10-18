@@ -70,6 +70,7 @@ const templateFolders = [
   "Template 2",
   "OnkarJondhale",
   "Kanishka",
+    "Ishika Singh Rajput",
 ];
 
 // A list of only the templates that were working.

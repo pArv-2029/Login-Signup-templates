@@ -62,11 +62,12 @@ const templateFolders = [
   "shivaram",
     "SohamPadalkar",
     "Split-Screen-Dark-Shikha",
+    "SrushtiThombre",
     "Tech Zero",
     "Template 1",
   "Template 2",
-  "OnkarJondhale"
-  "Kanishka",
+  "OnkarJondhale",
+  "Kanishka"
 ];
 
 // A list of only the templates that were working.
@@ -113,8 +114,9 @@ const workingTemplates = [
     "Avinash",
     "Dev-Portal-Shikha",
   "Split-Screen-Dark-Shikha",
-  "OnkarJondhale"
-  "Kanishka",
+  "SrushtiThombre",
+  "OnkarJondhale",
+  "Kanishka"
 ];
 
 //container element from the HTML

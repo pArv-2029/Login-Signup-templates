@@ -1,5 +1,6 @@
 //A list of all the template folder names.
 const templateFolders = [
+"AasthaRai",
   "Aerospace-Prog",
   "Abhinav Shukla",
   "Amit Raj Sharm",

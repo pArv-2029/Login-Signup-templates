@@ -19,6 +19,7 @@ const templateFolders = [
   "Divyansh-Raj-Template",
   "Foolish Developer",
   "HimanshuDubey",
+  "Igneel-98",
   "Ivan Grozdic",
   "Jayanta Ghosh",
   "Modern Animated Template",
@@ -68,7 +69,6 @@ const templateFolders = [
     "Template 1",
   "Template 2",
   "OnkarJondhale",
-  "OnkarJondhale",
   "Kanishka",
 ];
 
@@ -92,6 +92,7 @@ const workingTemplates = [
   "Dhruva Bhat",
   "Divyansh-Raj-Template",
   "Foolish Developer",
+  "Igneel-98",
   "Ivan Grozdic",
   "Modern Animated Template",
   "Pranilash",
@@ -116,7 +117,7 @@ const workingTemplates = [
     "Avinash",
     "Dev-Portal-Shikha",
   "Split-Screen-Dark-Shikha",
-  "OnkarJondhale"
+  "OnkarJondhale",
   "Kanishka",
 ];
 

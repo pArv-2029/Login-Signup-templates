@@ -49,6 +49,56 @@ header p {
   margin: 0 auto;
 }
 
+/* --- Search Box Styles --- */
+.search-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 25px auto 35px;
+  max-width: 400px;
+  position: relative;
+}
+
+#search-input {
+  width: 100%;
+  padding: 12px 40px 12px 15px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--text-primary);
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.2),
+              inset -2px -2px 6px rgba(255, 255, 255, 0.05);
+}
+
+#search-input::placeholder {
+  color: var(--text-secondary);
+}
+
+#search-input:focus {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 8px var(--accent-color);
+}
+
+/* Clear button (×) */
+#clear-search {
+  position: absolute;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+#clear-search:hover {
+  color: var(--accent-color);
+}
+
 /* --- Card container grid --- */
 #card-container {
   display: grid;

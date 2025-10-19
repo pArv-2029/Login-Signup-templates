@@ -252,3 +252,51 @@ themeToggle.addEventListener("change", function () {
         }
     });
     
+
+// --- Search Functionality ---
+const searchInput = document.getElementById("search-input");
+const clearBtn = document.getElementById("clear-search");
+
+if (searchInput) {
+  searchInput.addEventListener("input", function () {
+    const query = this.value.toLowerCase().trim();
+    const cards = document.querySelectorAll(".template-card");
+    let visibleCount = 0;
+
+    cards.forEach((card) => {
+      const title = card.querySelector("h3").textContent.toLowerCase();
+      const isMatch = title.includes(query);
+      card.style.display = isMatch ? "block" : "none";
+      if (isMatch) visibleCount++;
+    });
+
+    // Create or show "No results" message
+    let noResultMsg = document.getElementById("no-results");
+    if (!noResultMsg) {
+      noResultMsg = document.createElement("p");
+      noResultMsg.id = "no-results";
+      noResultMsg.textContent = "No templates found";
+      noResultMsg.style.textAlign = "center";
+      noResultMsg.style.marginTop = "40px";
+      noResultMsg.style.fontSize = "1.2rem";
+      noResultMsg.style.color = "var(--text-secondary)";
+      cardContainer.parentNode.insertBefore(noResultMsg, cardContainer.nextSibling);
+    }
+
+    noResultMsg.style.display = visibleCount === 0 ? "block" : "none";
+  });
+
+  //clear search button
+  if (clearBtn) {
+    clearBtn.addEventListener("click", function () {
+      searchInput.value = "";
+      const cards = document.querySelectorAll(".template-card");
+      cards.forEach((card) => (card.style.display = "block"));
+      const noResultMsg = document.getElementById("no-results");
+      if (noResultMsg) noResultMsg.style.display = "none";
+      searchInput.focus();
+    });
+  }
+}
+
+

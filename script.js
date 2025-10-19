@@ -21,6 +21,7 @@ const templateFolders = [
   "Foolish Developer",
   "HimanshuDubey",
   "Igneel-98",
+  "Ipsit",
   "Ivan Grozdic",
   "Jayanta Ghosh",
   "Modern Animated Template",

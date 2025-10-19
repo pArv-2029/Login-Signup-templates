@@ -61,6 +61,7 @@ const templateFolders = [
     "Janavi-Pandole",
     "Modern Animated Template",
     "Modern-Glassmorphic-Login",
+    "Neon-Cyberpunk-Login",
     "Nitin",
     "SaurabhMishra(edtech+ecommerce)",
   "shivaram",

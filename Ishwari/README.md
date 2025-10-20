@@ -1,10 +1,6 @@
 # Celestial Login: An Interactive Animated Experience
 
 Welcome to Celestial Login, a unique and magical login/signup page designed to delight users. This project transforms a standard form into an interactive experience with a friendly animated character that reacts to user input, all set against a beautiful, animated celestial background.
-
-![A friendly purple animated character floats above a login form, set against a dark blue background with falling stars and floating nebulas.](https://user-images.githubusercontent.com/12345/placeholder-image.png)
-_(Image placeholder: A GIF showcasing the character animations would be perfect here.)_
-
 ---
 
 ## ✨ Features

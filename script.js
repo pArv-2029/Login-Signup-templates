@@ -18,6 +18,7 @@ const templateFolders = [
   "Cursor Following",
   "Dhruva Bhat",
   "Divyansh-Raj-Template",
+  "EdwinAdamsV",
   "Foolish Developer",
   "HimanshuDubey",
   "Igneel-98",

@@ -38,7 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     applySavedTheme();
-    handleThemeToggle();    
+    handleThemeToggle();
+
 
     const setupPasswordToggle = (inputId, toggleId) => {
         const passwordInput = document.getElementById(inputId);
@@ -99,5 +100,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 strengthText.textContent = 'Password strength';
             }
         });
-    }
+    } 
 });

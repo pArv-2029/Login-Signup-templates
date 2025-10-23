@@ -28,6 +28,7 @@ const templateFolders = [
   "Pranilash",
   "Parth",
   "Prachi",
+  "RajdeepSingh",
   "SaurabhMishra(edtech+ecommerce)",
   "Tech Zero",
   "Template 1",

@@ -132,7 +132,7 @@ const workingTemplates = [
   "Split-Screen-Dark-Shikha",
   "SrushtiThombre",
   "OnkarJondhale",
-  "Kanishka"
+  "Kanishka",
   "OnkarJondhale",
   "Kanishka",
 ];

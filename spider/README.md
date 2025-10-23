@@ -24,13 +24,13 @@ It features smooth sliding transitions with a circular gradient animation, compr
 ## 📸 Screenshots
 
 ### Login Page
-![Login Page](screenshots/login-page.png)
+<img width="1884" height="1302" alt="image" src="https://github.com/user-attachments/assets/b5f3cf9a-509f-41fe-b35b-1a4beabf3e86" />
 
 ### Signup Page  
-![Signup Page](screenshots/signup-page.png)
+<img width="1842" height="1308" alt="image" src="https://github.com/user-attachments/assets/c921dace-b3ad-4364-9b62-13a216681e95" />
 
 ### Mobile Responsive View
-![Mobile View](screenshots/mobile-view.png)
+<img width="720" height="1550" alt="image" src="https://github.com/user-attachments/assets/f41e7c01-a67c-4468-a249-8c753377f890" />
 
 ---
 

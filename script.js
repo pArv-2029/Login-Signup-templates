@@ -43,7 +43,7 @@ const templateFolders = [
   "Minaal",
   "Sahil-Kumar",
   "samim29",
-"shivaram",
+  "shivaram",
     "Abhinav Shukla",
     "Amit Raj Sharm",
     "Anuradha",
@@ -68,10 +68,12 @@ const templateFolders = [
   "shivaram",
     "SohamPadalkar",
     "Split-Screen-Dark-Shikha",
+    "SrushtiThombre",
     "Tech Zero",
     "Template 1",
   "Template 2",
   "OnkarJondhale",
+  "SrushtiThombre",
   "Kanishka",
     "Ishika Singh Rajput",
 ];
@@ -122,6 +124,9 @@ const workingTemplates = [
     "Avinash",
     "Dev-Portal-Shikha",
   "Split-Screen-Dark-Shikha",
+  "SrushtiThombre",
+  "OnkarJondhale",
+  "Kanishka"
   "OnkarJondhale",
   "Kanishka",
 ];

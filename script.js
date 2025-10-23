@@ -81,7 +81,7 @@ const templateFolders = [
   "SrushtiThombre",
   "Kanishka",
     "Ishika Singh Rajput",
-    "Yash_Pratap"
+    "Harsh-Login-Form",
 ];
 
 // A list of only the templates that were working.

@@ -1,5 +1,5 @@
 🌟 Sign-In / Sign-Up Page Template
-
+![alt text](image.png)
 A beautifully designed and fully responsive Sign-In / Sign-Up template built with pure HTML, CSS, and JavaScript — no frameworks, no dependencies.
 This template features a modern glassmorphism UI, animated transitions, and an accessible layout that can easily be integrated into any project.
 

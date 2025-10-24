@@ -79,6 +79,7 @@ const templateFolders = [
   "Template 2",
   "OnkarJondhale",
   "SrushtiThombre",
+  "Rohan",
   "Kanishka",
     "Ishika Singh Rajput",
     "Harsh-Login-Form",
@@ -133,6 +134,7 @@ const workingTemplates = [
   "SrushtiThombre",
   "OnkarJondhale",
   "Kanishka",
+  "Rohan",
   "OnkarJondhale",
   "Kanishka",
 ];

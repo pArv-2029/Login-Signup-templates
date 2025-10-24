@@ -1,3 +1,5 @@
+// Author: Gupta Khushbu
+
 const formTitle = document.getElementById('form-title');
         const nameField = document.getElementById('name-field');
         const confirmPasswordField = document.getElementById('confirm-password-field');

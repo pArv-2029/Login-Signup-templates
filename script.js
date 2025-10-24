@@ -1,5 +1,6 @@
 //A list of all the template folder names.
 const templateFolders = [
+"AasthaRai",
   "Aerospace-Prog",
   "Abhinav Shukla",
   "Amit Raj Sharm",
@@ -17,15 +18,18 @@ const templateFolders = [
   "Cursor Following",
   "Dhruva Bhat",
   "Divyansh-Raj-Template",
+  "EdwinAdamsV",
   "Foolish Developer",
   "HimanshuDubey",
   "Igneel-98",
+  "Ipsit",
   "Ivan Grozdic",
   "Jayanta Ghosh",
   "Modern Animated Template",
   "Pranilash",
   "Parth",
   "Prachi",
+  "RajdeepSingh",
   "SaurabhMishra(edtech+ecommerce)",
   "Tech Zero",
   "Template 1",
@@ -37,11 +41,12 @@ const templateFolders = [
   "Jaswanth-Kumar",
   "Joyston",
   "Kartik Tripathi",
+  "Khushi",
   "Kruti Amrutiya",
   "Minaal",
   "Sahil-Kumar",
   "samim29",
-"shivaram",
+  "shivaram",
     "Abhinav Shukla",
     "Amit Raj Sharm",
     "Anuradha",
@@ -59,20 +64,25 @@ const templateFolders = [
     "Ivan Grozdic",
     "Himanshu",
     "Janavi-Pandole",
+    "karthik-srivathsa-05",
     "Modern Animated Template",
     "Modern-Glassmorphic-Login",
+    "Neon-Cyberpunk-Login",
     "Nitin",
     "SaurabhMishra(edtech+ecommerce)",
   "shivaram",
     "SohamPadalkar",
     "Split-Screen-Dark-Shikha",
+    "SrushtiThombre",
     "Tech Zero",
     "Template 1",
   "Template 2",
   "VedantTapkir",
   "OnkarJondhale",
+  "SrushtiThombre",
   "Kanishka",
     "Ishika Singh Rajput",
+    "Harsh-Login-Form",
 ];
 
 // A list of only the templates that were working.
@@ -108,6 +118,7 @@ const workingTemplates = [
   "Glassmorphism-adiprem73",
   "Jaswanth-Kumar",
   "Kartik Tripathi",
+  "Khushi",
   "Kruti Amrutiya",
   "Minaal",
   "Sahil-Kumar",
@@ -120,6 +131,9 @@ const workingTemplates = [
     "Avinash",
     "Dev-Portal-Shikha",
   "Split-Screen-Dark-Shikha",
+  "SrushtiThombre",
+  "OnkarJondhale",
+  "Kanishka",
   "OnkarJondhale",
   "Kanishka",
 ];
@@ -253,3 +267,51 @@ themeToggle.addEventListener("change", function () {
         }
     });
     
+
+// --- Search Functionality ---
+const searchInput = document.getElementById("search-input");
+const clearBtn = document.getElementById("clear-search");
+
+if (searchInput) {
+  searchInput.addEventListener("input", function () {
+    const query = this.value.toLowerCase().trim();
+    const cards = document.querySelectorAll(".template-card");
+    let visibleCount = 0;
+
+    cards.forEach((card) => {
+      const title = card.querySelector("h3").textContent.toLowerCase();
+      const isMatch = title.includes(query);
+      card.style.display = isMatch ? "block" : "none";
+      if (isMatch) visibleCount++;
+    });
+
+    // Create or show "No results" message
+    let noResultMsg = document.getElementById("no-results");
+    if (!noResultMsg) {
+      noResultMsg = document.createElement("p");
+      noResultMsg.id = "no-results";
+      noResultMsg.textContent = "No templates found";
+      noResultMsg.style.textAlign = "center";
+      noResultMsg.style.marginTop = "40px";
+      noResultMsg.style.fontSize = "1.2rem";
+      noResultMsg.style.color = "var(--text-secondary)";
+      cardContainer.parentNode.insertBefore(noResultMsg, cardContainer.nextSibling);
+    }
+
+    noResultMsg.style.display = visibleCount === 0 ? "block" : "none";
+  });
+
+  //clear search button
+  if (clearBtn) {
+    clearBtn.addEventListener("click", function () {
+      searchInput.value = "";
+      const cards = document.querySelectorAll(".template-card");
+      cards.forEach((card) => (card.style.display = "block"));
+      const noResultMsg = document.getElementById("no-results");
+      if (noResultMsg) noResultMsg.style.display = "none";
+      searchInput.focus();
+    });
+  }
+}
+
+

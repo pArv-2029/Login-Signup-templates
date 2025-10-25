@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VirtueVille Auth</title>
+  <link rel="stylesheet" href="/SrushtiThombre/login.css">
+</head>
+<body>
+  <div class="container" aria-label="Authentication Area">
+    <!-- Forms container -->
+    <div class="forms-container" role="region" aria-labelledby="auth-forms">
+      
+      <!-- Signup Form -->
+      <div class="form-control signup-form" aria-hidden="true">
+        <form action="/register" method="POST" autocomplete="off" aria-labelledby="signup-header">
+          <h2 id="signup-header">Signup</h2>
+          <input type="text" name="username" placeholder="Username" required maxlength="32" aria-label="Username" />
+          <input type="email" name="email" placeholder="Email" required aria-label="Email Address"/>
+          <input type="password" name="password" placeholder="Password" required minlength="6" aria-label="Password"/>
+          <input type="password" name="confirm_password" placeholder="Confirm Password" required minlength="6" aria-label="Confirm Password"/>
+          <div class="checkbox-group">
+            <input type="checkbox" id="signup-show-password" aria-label="Show password">
+            <label for="signup-show-password">Show password</label>
+          </div>
+          <button type="submit">Signup</button>
+        </form>
+      </div>
+
+      <!-- Signin Form -->
+      <div class="form-control signin-form" aria-hidden="false">
+        <form action="/login" method="POST" autocomplete="off" aria-labelledby="signin-header">
+          <h2 id="signin-header">Signin</h2>
+          <input type="text" name="username" placeholder="Username" required maxlength="32" aria-label="Username"/>
+          <input type="password" name="password" placeholder="Password" required minlength="6" aria-label="Password"/>
+          <div class="checkbox-group">
+            <input type="checkbox" id="signin-show-password" aria-label="Show password">
+            <label for="signin-show-password">Show password</label>
+          </div>
+          <button type="submit">Signin</button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- Intro container -->
+    <div class="intros-container">
+      <div class="intro-control signin-intro">
+        <div class="intro-control__inner">
+          <h2>Welcome back!</h2>
+          <p>We are happy to see you again. Sign in to continue.</p>
+          <button id="signup-btn" aria-label="Switch to Signup">No account yet? Signup</button>
+        </div>
+      </div>
+      <div class="intro-control signup-intro">
+        <div class="intro-control__inner">
+          <h2>Join Hacktoberfest!</h2>
+          <p>Create an account to access exclusive offers and features.</p>
+          <button id="signin-btn" aria-label="Switch to Signin">Already have an account? Signin</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/SrushtiThombre/login.js"></script>
+</body>
+</html>

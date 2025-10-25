@@ -42,6 +42,7 @@ const templateFolders = [
   "Joyston",
   "Kartik Tripathi",
   "Khushi",
+  "khushi-batra",
   "Kruti Amrutiya",
   "Minaal",
   "Sahil-Kumar",
@@ -82,6 +83,7 @@ const templateFolders = [
   "Kanishka",
     "Ishika Singh Rajput",
     "Harsh-Login-Form",
+
 ];
 
 // A list of only the templates that were working.
@@ -118,6 +120,7 @@ const workingTemplates = [
   "Jaswanth-Kumar",
   "Kartik Tripathi",
   "Khushi",
+  "khushi-batra",
   "Kruti Amrutiya",
   "Minaal",
   "Sahil-Kumar",
@@ -135,6 +138,7 @@ const workingTemplates = [
   "Kanishka",
   "OnkarJondhale",
   "Kanishka",
+ 
 ];
 
 //container element from the HTML

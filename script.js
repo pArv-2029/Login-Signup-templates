@@ -104,6 +104,7 @@ const templateFolders = [
     "Tech Zero",
     "Template 1",
   "Template 2",
+  "VedantTapkir",
   "OnkarJondhale",
   "SrushtiThombre",
   "Kanishka",

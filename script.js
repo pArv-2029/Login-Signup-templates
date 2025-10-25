@@ -44,6 +44,7 @@ const templateFolders = [
   "Joyston",
   "Kartik Tripathi",
   "Khushi",
+  "khushi-batra",
   "Kruti Amrutiya",
   "Minaal",
   "Sahil-Kumar",
@@ -115,6 +116,7 @@ const templateFolders = [
   "HarshalBhosale",
     "Ishika Singh Rajput",
     "Harsh-Login-Form",
+
 ];
 
 // A list of only the templates that were working.
@@ -151,6 +153,7 @@ const workingTemplates = [
   "Jaswanth-Kumar",
   "Kartik Tripathi",
   "Khushi",
+  "khushi-batra",
   "Kruti Amrutiya",
   "Minaal",
   "Ruthwik",
@@ -170,6 +173,7 @@ const workingTemplates = [
   "Rohan",
   "OnkarJondhale",
   "Kanishka",
+ 
   "HarshalBhosale",
 ];
 

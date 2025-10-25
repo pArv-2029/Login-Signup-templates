@@ -1,16 +1,14 @@
 //A list of all the template folder names.
 const templateFolders = [
-"AasthaRai",
   "Aerospace-Prog",
   "Abhinav Shukla",
   "Amit Raj Sharm",
-  "Aniruddha Dwivedi",
   "Aurora-Glass-Auth",
   "Avinash",
   "Ayush",
   "Baveja Template",
   "Bootsnipp",
-  "Chanakya", 
+  "Chanakya",
   "Chitraxi Porwal",
   "CodePenTemplate-1",
   "Coding Nepal",
@@ -43,37 +41,39 @@ const templateFolders = [
   "Minaal",
   "Sahil-Kumar",
   "samim29",
-"shivaram",
-    "Abhinav Shukla",
-    "Amit Raj Sharm",
-    "Anuradha",
-    "Avinash",
-    "Ayush",
-    "Baveja Template",
-    "Bootsnipp",
-    "Chanakya",
-    "CodePenTemplate-1",
-    "Coding Nepal",
-    "colorlib Template",
-    "Dev-Portal-Shikha",
-    "Dhruva Bhat",
-    "Foolish Developer",
-    "Ivan Grozdic",
-    "Himanshu",
-    "Janavi-Pandole",
-    "Modern Animated Template",
-    "Modern-Glassmorphic-Login",
-    "Nitin",
-    "SaurabhMishra(edtech+ecommerce)",
-  "shivaram",
-    "SohamPadalkar",
-    "Split-Screen-Dark-Shikha",
-    "Tech Zero",
-    "Template 1",
+  
+  "Abhinav Shukla",
+  "Amit Raj Sharm",
+  "Anuradha",
+  "Avinash",
+  "Ayush",
+  "Baveja Template",
+  "Bootsnipp",
+  "Chanakya",
+  "CodePenTemplate-1",
+  "Coding Nepal",
+  "colorlib Template",
+  "Dev-Portal-Shikha",
+  "Dhruva Bhat",
+  "Foolish Developer",
+  "Ivan Grozdic",
+  "Himanshu",
+  "Janavi-Pandole",
+  "Modern Animated Template",
+  "Modern-Glassmorphic-Login",
+  "Nitin",
+  "SaurabhMishra(edtech+ecommerce)",
+  "Shivaram",
+  "SohamPadalkar",
+  "Split-Screen-Dark-Shikha",
+  "Tech Zero",
+  "Template 1",
   "Template 2",
   "OnkarJondhale",
   "Kanishka",
-    "Ishika Singh Rajput",
+  "Ishika Singh Rajput",
+  "AasthaRai",
+  "AniruddhaDwivedi",
 ];
 
 // A list of only the templates that were working.
@@ -84,13 +84,19 @@ const workingTemplates = [
   "SaurabhMishra(edtech+ecommerce)",
   "CodePenTemplate-1",
   "Bootsnipp",
+  "Anuradha",
   "Ayush",
+  "Parth",
+  "Prachi",
+  "Joyston",
+  "Shivaram",
   "Avinash",
   "Abhinav Shukla",
   "Amit Raj Sharm",
   "Baveja Template",
   "Chanakya",
   "Chitraxi Porwal",
+  "Jayanta Ghosh",
   "Coding Nepal",
   "colorlib Template",
   "Dhruva Bhat",
@@ -98,14 +104,20 @@ const workingTemplates = [
   "Foolish Developer",
   "Igneel-98",
   "Ivan Grozdic",
+  "Modern-Glassmorphic-Login",
   "Modern Animated Template",
+  "Nitin",
   "Pranilash",
   "Tech Zero",
   "Template 1",
   "Template 2",
   "chatfly",
+  "Himanshu",
+  "HimanshuDubey",
+  "SohamPadalkar",
   "Elango-Kannan-00",
   "Gihan Harindra",
+  "Ishika Singh Rajput",
   "Glassmorphism-adiprem73",
   "Jaswanth-Kumar",
   "Kartik Tripathi",
@@ -114,16 +126,19 @@ const workingTemplates = [
   "Minaal",
   "Sahil-Kumar",
   "samim29",
-    "SaurabhMishra(edtech+ecommerce)",
-    "Janavi-Pandole",
-    "CodePenTemplate-1",
-    "Bootsnipp",
-    "Ayush",
-    "Avinash",
-    "Dev-Portal-Shikha",
+  "SaurabhMishra(edtech+ecommerce)",
+  "Janavi-Pandole",
+  "CodePenTemplate-1",
+  "Bootsnipp",
+  "Ayush",
+  "Avinash",
+  "Dev-Portal-Shikha",
   "Split-Screen-Dark-Shikha",
   "OnkarJondhale",
   "Kanishka",
+  "AasthaRai",
+  "AniruddhaDwivedi",
+  "Cursor Following",
 ];
 
 //container element from the HTML
@@ -178,7 +193,7 @@ if (popup) {
     controInfo.addEventListener("click", () => {
       popup.hidden = false;
       // move focus into the dialog for accessibility
-      const firstHeading = popup.querySelector('#popup-title');
+      const firstHeading = popup.querySelector("#popup-title");
       if (firstHeading) firstHeading.focus({ preventScroll: true });
     });
   }
@@ -198,7 +213,7 @@ if (popup) {
   });
 }
 
-// Scroll to top function 
+// Scroll to top function
 const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
 // Function to check scroll position and toggle button visibility
@@ -232,29 +247,28 @@ window.onscroll = () => {
 // Add an event listener that calls topFunction() when the button is clicked
 scrollToTopBtn.addEventListener("click", topFunction);
 
-    // --- NEW: THEME SWITCHER LOGIC ---
+// --- NEW: THEME SWITCHER LOGIC ---
 const themeToggle = document.querySelector("#theme-checkbox");
 const currentTheme = localStorage.getItem("theme");
 
-    // On page load, apply the saved theme
-    if (currentTheme) {
-        document.body.classList.add(currentTheme);
+// On page load, apply the saved theme
+if (currentTheme) {
+  document.body.classList.add(currentTheme);
   if (currentTheme === "light-mode") {
-            themeToggle.checked = true;
-        }
-    }
+    themeToggle.checked = true;
+  }
+}
 
-    // Add event listener for the toggle switch
+// Add event listener for the toggle switch
 themeToggle.addEventListener("change", function () {
-        if (this.checked) {
+  if (this.checked) {
     document.body.classList.add("light-mode");
     localStorage.setItem("theme", "light-mode");
-        } else {
+  } else {
     document.body.classList.remove("light-mode");
     localStorage.setItem("theme", ""); // When unchecked, it's the default dark mode
-        }
-    });
-    
+  }
+});
 
 // --- Search Functionality ---
 const searchInput = document.getElementById("search-input");
@@ -283,7 +297,10 @@ if (searchInput) {
       noResultMsg.style.marginTop = "40px";
       noResultMsg.style.fontSize = "1.2rem";
       noResultMsg.style.color = "var(--text-secondary)";
-      cardContainer.parentNode.insertBefore(noResultMsg, cardContainer.nextSibling);
+      cardContainer.parentNode.insertBefore(
+        noResultMsg,
+        cardContainer.nextSibling
+      );
     }
 
     noResultMsg.style.display = visibleCount === 0 ? "block" : "none";
@@ -301,5 +318,3 @@ if (searchInput) {
     });
   }
 }
-
-

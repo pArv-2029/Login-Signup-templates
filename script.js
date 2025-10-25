@@ -5,6 +5,7 @@ const templateFolders = [
   "Abhinav Shukla",
   "Amit Raj Sharm",
   "Aniruddha Dwivedi",
+  "Archisman Nath Choudhury",
   "Aurora-Glass-Auth",
   "Avinash",
   "Ayush",

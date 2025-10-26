@@ -1,6 +1,6 @@
 # 💎 Colm-Woods-Login
 
-![Colm-Woods-Login Preview](../screenshots/Colm-Woods.jpg)
+![Colm-Woods-Login Preview](Colm-Woods.jpg)
 
 A sleek and responsive **glass-style login interface** featuring soft transparency, glowing input highlights, and a smooth fade-in animation over a **dark blue gradient background**.
 

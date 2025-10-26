@@ -1,5 +1,6 @@
 //A list of all the template folder names.
 const templateFolders = [
+  "Ankit_nonsense3",
   "AasthaRai",
   "Aerospace-Prog",
   "Abhinav Shukla",
@@ -124,6 +125,7 @@ const templateFolders = [
 
 // A list of only the templates that were working.
 const workingTemplates = [
+  "Ankit_nonsense3",
   "Aerospace-Prog",
   "Aurora-Glass-Auth",
   "QuantumNeon-Auth",

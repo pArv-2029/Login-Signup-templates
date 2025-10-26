@@ -1,16 +1,17 @@
 //A list of all the template folder names.
 const templateFolders = [
-"AasthaRai",
+  "AasthaRai",
   "Aerospace-Prog",
   "Abhinav Shukla",
   "Amit Raj Sharm",
+  "JwelSrivastava_Form",
   "Aniruddha Dwivedi",
   "Aurora-Glass-Auth",
   "Avinash",
   "Ayush",
   "Baveja Template",
   "Bootsnipp",
-  "Chanakya", 
+  "Chanakya",
   "Chitraxi Porwal",
   "CodePenTemplate-1",
   "Coding Nepal",
@@ -47,47 +48,61 @@ const templateFolders = [
   "Sahil-Kumar",
   "samim29",
   "shivaram",
-    "Abhinav Shukla",
-    "Amit Raj Sharm",
-    "Anuradha",
-    "Avinash",
-    "Ayush",
-    "Baveja Template",
-    "Bootsnipp",
-    "Chanakya",
-    "CodePenTemplate-1",
-    "Coding Nepal",
-    "colorlib Template",
-    "Dev-Portal-Shikha",
-    "Dhruva Bhat",
-    "Foolish Developer",
-    "Ivan Grozdic",
-    "Himanshu",
-    "Janavi-Pandole",
-    "karthik-srivathsa-05",
-    "Modern Animated Template",
-    "Modern-Glassmorphic-Login",
-    "Neon-Cyberpunk-Login",
-    "Nitin",
-    "SaurabhMishra(edtech+ecommerce)",
+  "Abhinav Shukla",
+  "Amit Raj Sharm",
+  "Anuradha",
+  "Avinash",
+  "Ayush",
+  "Baveja Template",
+  "Bootsnipp",
+  "Chanakya",
+  "CodePenTemplate-1",
+  "Coding Nepal",
+  "colorlib Template",
+  "Dev-Portal-Shikha",
+  "Dhruva Bhat",
+  "Foolish Developer",
+  "Ivan Grozdic",
+  "Himanshu",
+  "Janavi-Pandole",
+  "karthik-srivathsa-05",
+  "Modern Animated Template",
+  "Modern-Glassmorphic-Login",
+  "Neon-Cyberpunk-Login",
+  "Nitin",
+  "SaurabhMishra(edtech+ecommerce)",
   "shivaram",
-    "SohamPadalkar",
-    "Split-Screen-Dark-Shikha",
-    "SrushtiThombre",
-    "Tech Zero",
-    "Template 1",
+  "SohamPadalkar",
+  "Split-Screen-Dark-Shikha",
+  "SrushtiThombre",
+  "Tech Zero",
+  "Template 1",
   "Template 2",
   "OnkarJondhale",
   "SrushtiThombre",
   "Kanishka",
-    "Ishika Singh Rajput",
-    "Harsh-Login-Form",
+  "Ishika Singh Rajput",
+  "Harsh-Login-Form",
 ];
+
+// Template details with descriptions and features
+const templateDetails = {
+  "JwelSrivastava_Form": {
+    title: "JwelSrivastava Form",
+    description: "Modern Glassmorphism Login Form",
+    features: ["Glassmorphism Design", "Real-time Validation", "Password Toggle", "Social Login", "Responsive Design"],
+    author: "Jwel Srivastava",
+    technologies: ["HTML5", "CSS3", "Vanilla JavaScript"],
+    category: "Modern",
+    difficulty: "Intermediate"
+  }
+};
 
 // A list of only the templates that were working.
 const workingTemplates = [
   "Aerospace-Prog",
   "Aurora-Glass-Auth",
+  "JwelSrivastava_Form",
   "QuantumNeon-Auth",
   "SaurabhMishra(edtech+ecommerce)",
   "CodePenTemplate-1",
@@ -122,13 +137,13 @@ const workingTemplates = [
   "Minaal",
   "Sahil-Kumar",
   "samim29",
-    "SaurabhMishra(edtech+ecommerce)",
-    "Janavi-Pandole",
-    "CodePenTemplate-1",
-    "Bootsnipp",
-    "Ayush",
-    "Avinash",
-    "Dev-Portal-Shikha",
+  "SaurabhMishra(edtech+ecommerce)",
+  "Janavi-Pandole",
+  "CodePenTemplate-1",
+  "Bootsnipp",
+  "Ayush",
+  "Avinash",
+  "Dev-Portal-Shikha",
   "Split-Screen-Dark-Shikha",
   "SrushtiThombre",
   "OnkarJondhale",
@@ -140,11 +155,41 @@ const workingTemplates = [
 //container element from the HTML
 const cardContainer = document.getElementById("card-container");
 
+// Log template details
+console.log('🎨 JwelSrivastava_Form Template Details:', templateDetails["JwelSrivastava_Form"]);
+
 // Loop through each folder name and creating a card for it
 templateFolders.forEach((folderName) => {
+  console.log('Creating card for:', folderName);
   // Create the HTML elements for the card
   const card = document.createElement("a");
   card.classList.add("template-card");
+
+  // Add special styling for JwelSrivastava_Form
+  if (folderName === "JwelSrivastava_Form") {
+    card.style.cssText += `
+      border: 2px solid #6366f1;
+      box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+      position: relative;
+    `;
+
+    // Add "NEW" badge
+    const newBadge = document.createElement("div");
+    newBadge.textContent = "NEW";
+    newBadge.style.cssText = `
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: #10b981;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 10px;
+      font-weight: bold;
+      z-index: 10;
+    `;
+    card.appendChild(newBadge);
+  }
 
   // Special fix for 'Tech Zero' link
   if (folderName === "Tech Zero") {
@@ -167,9 +212,53 @@ templateFolders.forEach((folderName) => {
   const title = document.createElement("h3");
   title.textContent = folderName;
 
-  // Adding the screenshot and title to the card
-  card.appendChild(screenshot);
-  card.appendChild(title);
+  // Add template details if available
+  const details = templateDetails[folderName];
+  if (details) {
+    // Add description
+    const description = document.createElement("p");
+    description.textContent = details.description;
+    description.style.cssText = `
+      font-size: 12px;
+      color: #888;
+      margin: 4px 0;
+      text-align: center;
+    `;
+
+    // Add features badge
+    const featuresDiv = document.createElement("div");
+    featuresDiv.style.cssText = `
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      justify-content: center;
+      margin-top: 8px;
+    `;
+
+    details.features.slice(0, 2).forEach(feature => {
+      const badge = document.createElement("span");
+      badge.textContent = feature;
+      badge.style.cssText = `
+        background: #6366f1;
+        color: white;
+        padding: 2px 6px;
+        border-radius: 10px;
+        font-size: 10px;
+        font-weight: 500;
+      `;
+      featuresDiv.appendChild(badge);
+    });
+
+    // Adding the screenshot, title, description and features to the card
+    card.appendChild(screenshot);
+    card.appendChild(title);
+    card.appendChild(description);
+    card.appendChild(featuresDiv);
+  } else {
+    // Adding the screenshot and title to the card (default)
+    card.appendChild(screenshot);
+    card.appendChild(title);
+  }
 
   // Adding the completed card to the container
   cardContainer.appendChild(card);
@@ -243,29 +332,29 @@ window.onscroll = () => {
 // Add an event listener that calls topFunction() when the button is clicked
 scrollToTopBtn.addEventListener("click", topFunction);
 
-    // --- NEW: THEME SWITCHER LOGIC ---
+// --- NEW: THEME SWITCHER LOGIC ---
 const themeToggle = document.querySelector("#theme-checkbox");
 const currentTheme = localStorage.getItem("theme");
 
-    // On page load, apply the saved theme
-    if (currentTheme) {
-        document.body.classList.add(currentTheme);
+// On page load, apply the saved theme
+if (currentTheme) {
+  document.body.classList.add(currentTheme);
   if (currentTheme === "light-mode") {
-            themeToggle.checked = true;
-        }
-    }
+    themeToggle.checked = true;
+  }
+}
 
-    // Add event listener for the toggle switch
+// Add event listener for the toggle switch
 themeToggle.addEventListener("change", function () {
-        if (this.checked) {
+  if (this.checked) {
     document.body.classList.add("light-mode");
     localStorage.setItem("theme", "light-mode");
-        } else {
+  } else {
     document.body.classList.remove("light-mode");
     localStorage.setItem("theme", ""); // When unchecked, it's the default dark mode
-        }
-    });
-    
+  }
+});
+
 
 // --- Search Functionality ---
 const searchInput = document.getElementById("search-input");

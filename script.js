@@ -117,6 +117,8 @@ const templateFolders = [
   "HarshalBhosale",
     "Ishika Singh Rajput",
     "Harsh-Login-Form",
+    "YashSavalkar",
+    "Yash_Savalkar"
 
 ];
 

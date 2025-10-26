@@ -6,6 +6,7 @@ const templateFolders = [
   "Amit Raj Sharm",
   "JwelSrivastava_Form",
   "Aniruddha Dwivedi",
+  "Archisman Nath Choudhury",
   "Aurora-Glass-Auth",
   "Avinash",
   "Ayush",
@@ -31,6 +32,7 @@ const templateFolders = [
   "Parth",
   "Prachi",
   "RajdeepSingh",
+  "Ruthwik",
   "SaurabhMishra(edtech+ecommerce)",
   "Tech Zero",
   "Template 1",
@@ -43,6 +45,7 @@ const templateFolders = [
   "Joyston",
   "Kartik Tripathi",
   "Khushi",
+  "khushi-batra",
   "Kruti Amrutiya",
   "Minaal",
   "Sahil-Kumar",
@@ -78,8 +81,10 @@ const templateFolders = [
   "Tech Zero",
   "Template 1",
   "Template 2",
+  "VedantTapkir",
   "OnkarJondhale",
   "SrushtiThombre",
+  "Rohan",
   "Kanishka",
   "Ishika Singh Rajput",
   "Harsh-Login-Form",
@@ -133,8 +138,10 @@ const workingTemplates = [
   "Jaswanth-Kumar",
   "Kartik Tripathi",
   "Khushi",
+  "khushi-batra",
   "Kruti Amrutiya",
   "Minaal",
+  "Ruthwik",
   "Sahil-Kumar",
   "samim29",
   "SaurabhMishra(edtech+ecommerce)",
@@ -148,8 +155,11 @@ const workingTemplates = [
   "SrushtiThombre",
   "OnkarJondhale",
   "Kanishka",
+  "Rohan",
   "OnkarJondhale",
   "Kanishka",
+ 
+  "HarshalBhosale",
 ];
 
 //container element from the HTML
@@ -278,7 +288,7 @@ if (popup) {
     controInfo.addEventListener("click", () => {
       popup.hidden = false;
       // move focus into the dialog for accessibility
-      const firstHeading = popup.querySelector('#popup-title');
+      const firstHeading = popup.querySelector("#popup-title");
       if (firstHeading) firstHeading.focus({ preventScroll: true });
     });
   }
@@ -298,7 +308,7 @@ if (popup) {
   });
 }
 
-// Scroll to top function 
+// Scroll to top function
 const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
 // Function to check scroll position and toggle button visibility
@@ -383,7 +393,10 @@ if (searchInput) {
       noResultMsg.style.marginTop = "40px";
       noResultMsg.style.fontSize = "1.2rem";
       noResultMsg.style.color = "var(--text-secondary)";
-      cardContainer.parentNode.insertBefore(noResultMsg, cardContainer.nextSibling);
+      cardContainer.parentNode.insertBefore(
+        noResultMsg,
+        cardContainer.nextSibling
+      );
     }
 
     noResultMsg.style.display = visibleCount === 0 ? "block" : "none";
@@ -401,5 +414,3 @@ if (searchInput) {
     });
   }
 }
-
-

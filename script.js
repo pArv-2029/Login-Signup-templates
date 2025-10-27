@@ -1,3 +1,14 @@
+/*
+Accessibility note (2025-10-27):
+- Improved the "How to contribute" dialog for keyboard and screen reader users.
+- Replaced non-focusable close <span> with a <button>.
+- Trigger now exposes aria-expanded and aria-controls; dialog has tabindex="-1".
+- Script manages focus (save/restore), Esc to close, Tab trapping, and overlay click.
+
+Manual test: open index.html, Tab to the trigger, Enter to open, verify focus moves inside, Tab cycles,
+Esc closes and restores focus to trigger.
+*/
+
 //A list of all the template folder names.
 const templateFolders = [
 "AasthaRai",
@@ -164,38 +175,122 @@ templateFolders.forEach((folderName) => {
   cardContainer.appendChild(card);
 });
 
-// how to contribute info code
+// how to contribute info code (accessibility improvements)
 const controInfo = document.querySelector(".contro-info");
 const popup = document.getElementById("popup");
 const closeBtn = document.querySelector(".close-btn");
 
-// Safety guards in case elements are missing
 if (popup) {
-  // Ensure popup is hidden on load (use the boolean hidden attribute)
+  // ensure hidden on load
   popup.hidden = true;
 
+  // store last focused element so we can restore focus on close
+  let lastFocus = null;
+
+  // utility: get focusable elements inside the dialog
+  const getFocusable = () => {
+    return Array.from(
+      popup.querySelectorAll(
+        'a[href], area[href], input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      )
+    ).filter((el) => el.offsetWidth > 0 || el.offsetHeight > 0 || el === document.activeElement);
+  };
+
+  const openDialog = () => {
+    lastFocus = document.activeElement;
+    popup.hidden = false;
+    popup.setAttribute('aria-hidden', 'false');
+    if (controInfo) controInfo.setAttribute('aria-expanded', 'true');
+
+    // Move focus to the dialog container so screen readers announce it
+    popup.focus({ preventScroll: true });
+
+    // focus first meaningful control (close button or first focusable)
+    const focusables = getFocusable();
+    if (focusables.length) {
+      focusables[0].focus({ preventScroll: true });
+    }
+
+    // add keydown handler for Esc and Tab trapping
+    popup.addEventListener('keydown', handleKeyDown);
+  };
+
+  const closeDialog = () => {
+    popup.hidden = true;
+    popup.setAttribute('aria-hidden', 'true');
+    if (controInfo) controInfo.setAttribute('aria-expanded', 'false');
+    // remove key handler
+    popup.removeEventListener('keydown', handleKeyDown);
+    // restore focus
+    if (lastFocus && typeof lastFocus.focus === 'function') {
+      lastFocus.focus({ preventScroll: true });
+    }
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Escape' || e.key === 'Esc') {
+      e.preventDefault();
+      closeDialog();
+      return;
+    }
+
+    if (e.key === 'Tab') {
+      // basic focus trap
+      const focusables = getFocusable();
+      if (focusables.length === 0) {
+        e.preventDefault();
+        return;
+      }
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else {
+        if (document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    }
+  };
+
   if (controInfo) {
-    controInfo.addEventListener("click", () => {
-      popup.hidden = false;
-      // move focus into the dialog for accessibility
-      const firstHeading = popup.querySelector('#popup-title');
-      if (firstHeading) firstHeading.focus({ preventScroll: true });
+    // ensure trigger has proper ARIA attributes (in case markup missing)
+    controInfo.setAttribute('aria-controls', 'popup');
+    controInfo.setAttribute('aria-expanded', controInfo.getAttribute('aria-expanded') || 'false');
+
+    controInfo.addEventListener('click', (e) => {
+      e.preventDefault();
+      openDialog();
+    });
+
+    // allow keyboard activation via Enter/Space (button already handles this, but keep defensive)
+    controInfo.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openDialog();
+      }
     });
   }
 
   if (closeBtn) {
-    closeBtn.addEventListener("click", () => {
-      popup.hidden = true;
-      if (controInfo) controInfo.focus({ preventScroll: true });
+    closeBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeDialog();
     });
   }
 
-  window.addEventListener("click", (e) => {
+  // overlay click (click outside popup-content closes)
+  popup.addEventListener('click', (e) => {
     if (e.target === popup) {
-      popup.hidden = true;
-      if (controInfo) controInfo.focus({ preventScroll: true });
+      closeDialog();
     }
   });
+
 }
 
 // Scroll to top function 

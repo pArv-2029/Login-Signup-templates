@@ -259,9 +259,11 @@
           <label>Email</label>
         </div>
         <div class="input-box">
-          <input type="password" required />
+          <input type="password" id="signupPassword" required />
           <label>Password</label>
         </div>
+        <div id="strengthMessage" style="color:white; font-size:0.9rem; text-align:center; margin-top:-10px;"></div>
+
         <button type="submit" class="btn">Sign Up</button>
         <div class="toggle-link">
           Already have an account? <span id="loginLink">Login</span>
@@ -286,6 +288,29 @@
     loginLink.addEventListener('click', () => {
       container.classList.remove('active');
     });
+     const passwordInput = document.getElementById('signupPassword');
+  const strengthMessage = document.getElementById('strengthMessage');
+
+  passwordInput.addEventListener('input', () => {
+    const value = passwordInput.value;
+    let strength = '';
+
+    if (value.length === 0) {
+      strength = '';
+    } else if (value.length < 6) {
+      strength = 'Weak';
+    } else if (value.match(/[A-Z]/) && value.match(/[0-9]/) && value.length >= 8) {
+      strength = 'Strong';
+    } else {
+      strength = 'Medium';
+    }
+
+    strengthMessage.textContent = strength;
+    strengthMessage.style.color =
+      strength === 'Strong' ? 'lime' :
+      strength === 'Medium' ? 'orange' : 'red';
+  });
   </script>
+  
 </body>
 </html>

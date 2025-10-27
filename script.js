@@ -1,5 +1,6 @@
 //A list of all the template folder names.
 const templateFolders = [
+  "Ankit_nonsense3",
   "AasthaRai",
   "Aerospace-Prog",
   "Abhinav Shukla",
@@ -13,6 +14,7 @@ const templateFolders = [
   "Baveja Template",
   "Bootsnipp",
   "Chanakya",
+  "Chinmay",
   "Chitraxi Porwal",
   "CodePenTemplate-1",
   "Coding Nepal",
@@ -105,6 +107,7 @@ const templateDetails = {
 
 // A list of only the templates that were working.
 const workingTemplates = [
+  "Ankit_nonsense3",
   "Aerospace-Prog",
   "Aurora-Glass-Auth",
   "JwelSrivastava_Form",
@@ -118,6 +121,7 @@ const workingTemplates = [
   "Amit Raj Sharm",
   "Baveja Template",
   "Chanakya",
+  "Chinmay",
   "Chitraxi Porwal",
   "Coding Nepal",
   "colorlib Template",

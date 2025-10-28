@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Cyberpunk - Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0e27;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: #00ff88;
+        }
+
+        /* Animated grid background */
+        .grid-background {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(0deg, transparent 24%, rgba(0, 255, 136, 0.05) 25%, rgba(0, 255, 136, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 255, 136, 0.05) 75%, rgba(0, 255, 136, 0.05) 76%, transparent 77%, transparent),
+                linear-gradient(90deg, transparent 24%, rgba(0, 255, 136, 0.05) 25%, rgba(0, 255, 136, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 255, 136, 0.05) 75%, rgba(0, 255, 136, 0.05) 76%, transparent 77%, transparent);
+            background-size: 50px 50px;
+            z-index: 0;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(50px); }
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 450px;
+            padding: 20px;
+        }
+
+        .form-box {
+            background: rgba(10, 14, 39, 0.8);
+            border: 2px solid #00ff88;
+            border-radius: 5px;
+            padding: 40px;
+            box-shadow: 
+                0 0 20px rgba(0, 255, 136, 0.3),
+                inset 0 0 20px rgba(0, 255, 136, 0.1);
+            animation: glitch 0.3s ease-out;
+            position: relative;
+        }
+
+        @keyframes glitch {
+            0% {
+                clip-path: inset(0 0 0 0);
+            }
+            20% {
+                clip-path: inset(0 0 65% 0);
+            }
+            40% {
+                clip-path: inset(28% 0 35% 0);
+            }
+            60% {
+                clip-path: inset(8% 0 58% 0);
+            }
+            80% {
+                clip-path: inset(0 0 0 0);
+            }
+        }
+
+        .form-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(0, 255, 136, 0.1) 50%, transparent 70%);
+            pointer-events: none;
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .form-title {
+            color: #00ff88;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .form-subtitle {
+            color: #00ffff;
+            font-size: 12px;
+            text-align: center;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .form-group label {
+            display: block;
+            color: #00ff88;
+            margin-bottom: 8px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 0 5px rgba(0, 255, 136, 0.5);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #00ff88;
+            border-radius: 0;
+            background: rgba(0, 255, 136, 0.05);
+            color: #00ff88;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            outline: none;
+            text-shadow: 0 0 5px rgba(0, 255, 136, 0.3);
+        }
+
+        .form-group input::placeholder {
+            color: rgba(0, 255, 136, 0.4);
+        }
+
+        .form-group input:focus {
+            background: rgba(0, 255, 136, 0.1);
+            box-shadow: 
+                0 0 15px rgba(0, 255, 136, 0.5),
+                inset 0 0 10px rgba(0, 255, 136, 0.1);
+            border-color: #00ffff;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            gap: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: #00ff88;
+        }
+
+        .checkbox-group label {
+            margin: 0;
+            color: #00ff88;
+            font-size: 12px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-button {
+            width: 100%;
+            padding: 12px;
+            background: transparent;
+            color: #00ff88;
+            border: 2px solid #00ff88;
+            border-radius: 0;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'Courier New', monospace;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .form-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #00ff88;
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .form-button:hover::before {
+            left: 0;
+        }
+
+        .form-button:hover {
+            color: #0a0e27;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.8);
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            color: #00ff88;
+            font-size: 12px;
+            position: relative;
+            z-index: 1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #00ff88;
+        }
+
+        .divider span {
+            margin: 0 10px;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .social-btn {
+            flex: 1;
+            padding: 10px;
+            background: transparent;
+            border: 2px solid #00ffff;
+            border-radius: 0;
+            color: #00ffff;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Courier New', monospace;
+        }
+
+        .social-btn:hover {
+            background: #00ffff;
+            color: #0a0e27;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+        }
+
+        .toggle-forms {
+            text-align: center;
+            color: #00ff88;
+            font-size: 12px;
+            position: relative;
+            z-index: 1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .toggle-forms a {
+            color: #00ffff;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+        }
+
+        .toggle-forms a:hover {
+            color: #00ff88;
+            text-shadow: 0 0 15px rgba(0, 255, 136, 0.8);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            .form-box {
+                padding: 30px 20px;
+            }
+
+            .form-title {
+                font-size: 24px;
+                letter-spacing: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-background"></div>
+
+    <div class="container">
+        <!-- Login Form -->
+        <div class="form-box" id="loginForm">
+            <h1 class="form-title">[ LOGIN ]</h1>
+            <p class="form-subtitle">// ACCESS GRANTED</p>
+
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="login-email">USERNAME/EMAIL</label>
+                    <input type="email" id="login-email" placeholder="user@cyberdomain.io" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="login-password">PASSWORD</label>
+                    <input type="password" id="login-password" placeholder="••••••••" required>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">REMEMBER DEVICE</label>
+                </div>
+
+                <button type="submit" class="form-button">AUTHENTICATE</button>
+            </form>
+
+            <div class="divider"><span>&gt;&gt;</span></div>
+
+            <div class="social-buttons">
+                <button class="social-btn" title="Login with Google">G</button>
+                <button class="social-btn" title="Login with GitHub">⚙</button>
+                <button class="social-btn" title="Login with Discord">◆</button>
+            </div>
+
+            <div class="toggle-forms">
+                NO ACCOUNT? <a onclick="toggleForms()">CREATE PROFILE</a>
+            </div>
+        </div>
+
+        <!-- Signup Form -->
+        <div class="form-box hidden" id="signupForm">
+            <h1 class="form-title">[ REGISTER ]</h1>
+            <p class="form-subtitle">// NEW USER INITIALIZATION</p>
+
+            <form onsubmit="handleSignup(event)">
+                <div class="form-group">
+                    <label for="signup-name">FULL NAME</label>
+                    <input type="text" id="signup-name" placeholder="Agent Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="signup-email">EMAIL</label>
+                    <input type="email" id="signup-email" placeholder="user@cyberdomain.io" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="signup-password">PASSWORD</label>
+                    <input type="password" id="signup-password" placeholder="••••••••" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="signup-confirm">CONFIRM PASSWORD</label>
+                    <input type="password" id="signup-confirm" placeholder="••••••••" required>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">ACCEPT TERMS OF SERVICE</label>
+                </div>
+
+                <button type="submit" class="form-button">INITIALIZE PROFILE</button>
+            </form>
+
+            <div class="divider"><span>&gt;&gt;</span></div>
+
+            <div class="social-buttons">
+                <button class="social-btn" title="Signup with Google">G</button>
+                <button class="social-btn" title="Signup with GitHub">⚙</button>
+                <button class="social-btn" title="Signup with Discord">◆</button>
+            </div>
+
+            <div class="toggle-forms">
+                HAVE ACCOUNT? <a onclick="toggleForms()">AUTHENTICATE</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleForms() {
+            document.getElementById('loginForm').classList.toggle('hidden');
+            document.getElementById('signupForm').classList.toggle('hidden');
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const email = document.getElementById('login-email').value;
+            alert(`[SYSTEM] ACCESS GRANTED FOR: ${email}`);
+            event.target.reset();
+        }
+
+        function handleSignup(event) {
+            event.preventDefault();
+            const password = document.getElementById('signup-password').value;
+            const confirm = document.getElementById('signup-confirm').value;
+
+            if (password !== confirm) {
+                alert('[ERROR] PASSWORDS DO NOT MATCH');
+                return;
+            }
+
+            const name = document.getElementById('signup-name').value;
+            alert(`[SYSTEM] PROFILE INITIALIZED FOR: ${name}`);
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
